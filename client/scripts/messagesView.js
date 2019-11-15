@@ -7,8 +7,10 @@ var MessagesView = {
   render: function(Messages) {
     _.each(Messages, (message) => {
       var $message = MessageView.render(message);
-      MessagesView.$chats.append($message);
+      // append to the end
+      // MessagesView.$chats.append($message);
+      // prepend to the top
+      MessagesView.$chats.prepend($message);
     });
   },
-
 };
