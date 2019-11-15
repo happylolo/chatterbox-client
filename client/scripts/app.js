@@ -17,9 +17,15 @@ var App = {
 
   },
 
-  fetch: function(callback = ()=>{}) {
+  fetch: function(callback = () => {}) {
     Parse.readAll((data) => {
-      // examine the response from the server request:
+      // Initialize the Messages object in message.js
+      // From the console, we can see that data is an object, the key is "results", and the value is an array of objects which size is 100
+      Messages = data.results;
+      MessagesView.render(Messages);
+
+      // examine the response from the server request
+      // open the console of index.html and you will see the data from parse server has been logged here
       console.log(data);
 
       callback();
