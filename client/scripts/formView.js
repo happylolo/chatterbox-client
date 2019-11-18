@@ -21,9 +21,8 @@ var FormView = {
     Parse.create(message, () => {
       // If we pass the message to the Parse server and create it successfully, we will go and re-render the messages
       // Since MessagesView has nothing to do with fetching the data, so we will need to concat the newly created message to Messages
-      Messages.add(message);
-      // Refresh the displayed messages
-      MessagesView.render(Messages);
+      // Make MessagesView.render as a callback and refresh the displayed messages if the new message was added successfully
+      Messages.add(message, MessagesView.render);
       console.log('chatterbox: Message Sent!');
     });
   },
