@@ -4,8 +4,9 @@ var MessagesView = {
   initialize: function() {
   },
 
-  render: function(Messages) {
-    _.each(Messages, (message) => {
+  render: function() {
+    _.each(Messages._data, (message) => {
+      console.log('In the messagesView.render!!!');
       var $message = MessageView.render(message);
       // append to the end
       // MessagesView.$chats.append($message);

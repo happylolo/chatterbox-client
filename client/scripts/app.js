@@ -21,8 +21,8 @@ var App = {
     Parse.readAll((data) => {
       // Initialize the Messages object in message.js
       // From the console, we can see that data is an object, the key is "results", and the value is an array of objects which size is 100
-      Messages = data.results;
-      MessagesView.render(Messages);
+      Messages.update(data.results);
+      MessagesView.render();
 
       // examine the response from the server request
       // open the console of index.html and you will see the data from parse server has been logged here
