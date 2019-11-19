@@ -10,7 +10,8 @@ var MessagesView = {
     // debugger;
     Messages
       .items()
-      // .filter(Room.isSelected(message))
+      // filter out all non-selected messages
+      .filter(message => Rooms.isSelected(message.roomname))
       .each((message) => {
         var $message = MessageView.render(message);
         // Append to the end: MessagesView.$chats.append($message);

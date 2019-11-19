@@ -19,6 +19,8 @@ var App = {
 
   fetch: function(callback = () => {}) {
     Parse.readAll((data) => {
+      // Follow the same pattern as Messages to update and render the roomname
+      Rooms.update(data.results, RoomsView.render);
       // Initialize the Messages object in message.js
       // From the console, we can see that data is an object, the key is "results", and the value is an array of objects which size is 100
       // Make MessagesView.render as a callback to render all the messages

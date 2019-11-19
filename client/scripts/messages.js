@@ -8,13 +8,13 @@ var Messages = {
   },
 
   // () => {} means the default callback, so that this function always has a callback
-  add: function (message, callback = () => {}) {
+  add: function(message, callback = () => {}) {
     Messages._data[message.objectId] = Messages._conform(message);
 
     callback();
   },
 
-  update: function (messages, callback = () => {}) {
+  update: function(messages, callback = () => {}) {
     for (var message of messages) {
       Messages._data[message.objectId] = Messages._conform(message);
     }
