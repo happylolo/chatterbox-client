@@ -19,6 +19,8 @@ var Rooms = {
       .uniq()
       .each(room => Rooms._data.add(room));
 
+    callback();
+
     // equivalent way without using _.chain:
     // var rooms = _.pluck(messages, 'roomname');
     // rooms = rooms.uniq();

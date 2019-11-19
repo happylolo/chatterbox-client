@@ -12,11 +12,13 @@ var MessagesView = {
       .items()
       // filter out all non-selected messages
       .filter(message => Rooms.isSelected(message.roomname))
-      .each((message) => {
-        var $message = MessageView.render(message);
-        // Append to the end: MessagesView.$chats.append($message);
-        // Prepend to the top:
-        MessagesView.$chats.prepend($message);
-      });
+      .each(message => MessagesView.renderMessage(message));
   },
+
+  renderMessage: function (message) {
+    var $message = MessageView.render(message);
+    // Append to the end: MessagesView.$chats.append($message);
+    // Prepend to the top:
+    MessagesView.$chats.prepend($message);
+  }
 };
